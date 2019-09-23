@@ -1,6 +1,8 @@
 package io.github.mrizkifadil26.dicodingsubmission.ui.detail.movies
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -9,8 +11,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import io.github.mrizkifadil26.dicodingsubmission.R
 import io.github.mrizkifadil26.dicodingsubmission.data.movies.Movie
+import io.github.mrizkifadil26.dicodingsubmission.ui.MainActivity
 import io.github.mrizkifadil26.dicodingsubmission.util.Config
 import io.github.mrizkifadil26.dicodingsubmission.viewmodel.MovieViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity() {
@@ -52,8 +56,7 @@ class MovieDetailActivity : AppCompatActivity() {
                         it, "yyyy")
                 } + ")")
 
-                val genres  = Config.movieGenreStringBuilder(results)
-                text_movie_detail_genre.text = genres
+                movie_detail_genre.text = Config.movieGenreStringBuilder(results)
 
                 movie_detail_release_date.text =
                     results.movieReleaseDate?.let { Config.dateFormatter(it, "d MMM yyyy") }
@@ -85,6 +88,7 @@ class MovieDetailActivity : AppCompatActivity() {
                     } + ")")
                     movie_detail_release_date.text =
                         remoteResults.movieReleaseDate?.let { Config.dateFormatter(it, "d MMM yyyy") }
+                    movie_detail_genre.text = Config.movieGenreStringBuilder(remoteResults)
                     movie_detail_rating.text = remoteResults.movieRating.toString()
                     movie_detail_tagline.text = ("""
                             """" + remoteResults.movieTagline + """"
@@ -111,6 +115,12 @@ class MovieDetailActivity : AppCompatActivity() {
                 false
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        intent = Intent(this@MovieDetailActivity, MainActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {

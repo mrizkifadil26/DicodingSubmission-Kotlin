@@ -109,7 +109,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/tv_release_date"
+            android:text="@string/release_date"
             app:layout_constraintEnd_toStartOf="@+id/data_separator3"
             app:layout_constraintStart_toStartOf="@id/tv_detail_poster_container"
             app:layout_constraintTop_toBottomOf="@+id/tv_detail_poster_container" />
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/tv_overview"
+            android:text="@string/overview"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_detail_episodes" />
 
@@ -176,7 +176,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/tv_genre"
+            android:text="@string/genre"
             app:layout_constraintEnd_toEndOf="@+id/text_tv_detail_release_date"
             app:layout_constraintStart_toStartOf="@+id/text_tv_detail_release_date"
             app:layout_constraintTop_toBottomOf="@+id/text_tv_detail_release_date" />

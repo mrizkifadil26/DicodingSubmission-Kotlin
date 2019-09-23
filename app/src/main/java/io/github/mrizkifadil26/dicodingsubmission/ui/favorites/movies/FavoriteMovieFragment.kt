@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import io.github.mrizkifadil26.dicodingsubmission.R
 import io.github.mrizkifadil26.dicodingsubmission.viewmodel.MovieViewModel
 import kotlinx.android.synthetic.main.fragment_favorite_movie.*
+import timber.log.Timber
 
 class FavoriteMovieFragment : Fragment() {
 

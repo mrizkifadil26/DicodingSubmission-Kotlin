@@ -22,10 +22,10 @@
         </activity>
         <activity android:name=".ui.detail.tvshows.TvShowDetailActivity"
             android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/Theme.MaterialComponents.Light" />
+            android:theme="@style/MyMaterialTheme" />
         <activity android:name=".ui.detail.movies.MovieDetailActivity"
             android:parentActivityName=".ui.MainActivity"
-            android:theme="@style/Theme.MaterialComponents.Light" />
+            android:theme="@style/MyMaterialTheme" />
     </application>
 
 </manifest>

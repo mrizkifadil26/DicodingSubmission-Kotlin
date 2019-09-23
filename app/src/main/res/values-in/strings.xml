@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DicodingSubmission</string>
+    <string name="add_to_favorites">Tambahkan ke Favorit</string>
+    <string name="episodes">Episode</string>
+    <string name="movie_backdrop">Backdrop Film</string>
+    <string name="movie_poster_desc">Poster Film</string>
+    <string name="nav_favorite">Daftar Favorit</string>
+    <string name="nav_movies">Film</string>
+    <string name="nav_tv">Serial TV</string>
+    <string name="no_data">Tidak ada data</string>
+    <string name="seasons">Musim</string>
+    <string name="tv_backdrop">Serial TV Backdrop</string>
+    <string name="tv_genre">Genre</string>
+    <string name="tv_overview">Deskripsi</string>
+    <string name="tv_release_date">Tanggal Rilis</string>
+    <string name="tv_show_poster_desc">Poster Serial TV</string>
+    <string name="release_date">Tanggal Rilis</string>
+    <string name="overview">Deskripsi</string>
+    <string name="genre">Genre</string>
+</resources>

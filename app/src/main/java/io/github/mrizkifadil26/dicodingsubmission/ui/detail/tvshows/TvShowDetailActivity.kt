@@ -1,5 +1,6 @@
 package io.github.mrizkifadil26.dicodingsubmission.ui.detail.tvshows
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import io.github.mrizkifadil26.dicodingsubmission.R
 import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShow
+import io.github.mrizkifadil26.dicodingsubmission.ui.MainActivity
 import io.github.mrizkifadil26.dicodingsubmission.util.Config
 import io.github.mrizkifadil26.dicodingsubmission.viewmodel.TvShowViewModel
 import kotlinx.android.synthetic.main.activity_tv_show_detail.*
@@ -51,7 +53,7 @@ class TvShowDetailActivity : AppCompatActivity() {
                     Config.dateFormatter(
                         it, "yyyy")
                 } + ")")
-//            tv_detail_genre.text = Config.tvGenreStringBuilder(tvDetail)
+                tv_detail_genre.text = Config.tvGenreStringBuilder(tvResults)
                 tv_detail_release_date.text =
                     tvResults.tvShowReleaseDate?.let { Config.dateFormatter(it, "d MMM yyyy") }
                 tv_detail_rating.text = tvResults.tvShowRating.toString()
@@ -79,7 +81,7 @@ class TvShowDetailActivity : AppCompatActivity() {
                         Config.dateFormatter(
                             it, "yyyy")
                     } + ")")
-//            tv_detail_genre.text = Config.tvGenreStringBuilder(tvDetail)
+                    tv_detail_genre.text = Config.tvGenreStringBuilder(remoteTvResults)
                     tv_detail_release_date.text =
                         remoteTvResults.tvShowReleaseDate?.let { Config.dateFormatter(it, "d MMM yyyy") }
                     tv_detail_rating.text = remoteTvResults.tvShowRating.toString()
@@ -108,6 +110,12 @@ class TvShowDetailActivity : AppCompatActivity() {
                 false
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        intent = Intent(this@TvShowDetailActivity, MainActivity::class.java)
+        startActivity(intent)
     }
 
     companion object {

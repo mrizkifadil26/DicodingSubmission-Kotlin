@@ -11,7 +11,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import io.github.mrizkifadil26.dicodingsubmission.R
-import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShowGenre
 import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShowResults
 import io.github.mrizkifadil26.dicodingsubmission.ui.detail.tvshows.TvShowDetailActivity
 import io.github.mrizkifadil26.dicodingsubmission.util.Config
@@ -21,11 +20,9 @@ class TvShowAdapter(private val context: Context)
     : RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
 
     private lateinit var tvShows: List<TvShowResults>
-    private lateinit var genres: List<TvShowGenre>
 
-    fun setListTvShow(tvShows: List<TvShowResults>, genres: List<TvShowGenre>) {
+    fun setListTvShow(tvShows: List<TvShowResults>) {
         this.tvShows = tvShows
-        this.genres = genres
         notifyDataSetChanged()
     }
 

@@ -4,6 +4,7 @@ import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "tbl_movie")
+@TypeConverters(MovieGenreConverter::class)
 data class Movie (
     @PrimaryKey
     @ColumnInfo(name = "id")
@@ -12,7 +13,8 @@ data class Movie (
     @SerializedName("title") var movieTitle: String?,
     @ColumnInfo(name = "release_date")
     @SerializedName("release_date") var movieReleaseDate: String?,
-    @SerializedName("genres") var genreList: List<MovieGenre>,
+    @ColumnInfo(name = "genres")
+    @SerializedName("genres") var movieGenres: List<MovieGenre>,
     @ColumnInfo(name = "vote_average")
     @SerializedName("vote_average") var movieRating: Double,
     @ColumnInfo(name = "popularity")

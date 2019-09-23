@@ -1,6 +1,7 @@
 package io.github.mrizkifadil26.dicodingsubmission.util
 
 import io.github.mrizkifadil26.dicodingsubmission.data.movies.Movie
+import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShow
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,9 +18,9 @@ object Config {
 
     fun movieGenreStringBuilder(detail: Movie): String {
         val genreBuilder = StringBuilder()
-        detail.genreList.forEachIndexed { index, genre ->
-            if (index < detail.genreList.size - 1) {
-                genreBuilder.append(genre).append(" | ")
+        detail.movieGenres.forEachIndexed { index, genre ->
+            if (index < detail.movieGenres.size - 1) {
+                genreBuilder.append(genre.name).append(" | ")
             } else {
                 genreBuilder.append(genre.name)
             }
@@ -27,15 +28,15 @@ object Config {
         return genreBuilder.toString()
     }
 
-    /*fun tvGenreStringBuilder(detail: TvShow?): String {
+    fun tvGenreStringBuilder(detail: TvShow): String {
         val genreBuilder = StringBuilder()
-        detail?.genres?.forEachIndexed { index, genre ->
-            if (index < detail.genres.size - 1) {
+        detail.tvShowGenres.forEachIndexed { index, genre ->
+            if (index < detail.tvShowGenres.size - 1) {
                 genreBuilder.append(genre.name).append(" | ")
             } else {
                 genreBuilder.append(genre.name)
             }
         }
         return genreBuilder.toString()
-    }*/
+    }
 }

@@ -9,14 +9,12 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import io.github.mrizkifadil26.dicodingsubmission.R
-import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShowGenre
 import io.github.mrizkifadil26.dicodingsubmission.viewmodel.TvShowViewModel
 import kotlinx.android.synthetic.main.fragment_tv_shows.*
 
 class TvShowFragment : Fragment() {
 
     private lateinit var tvAdapter: TvShowAdapter
-    private var tvShowGenres: List<TvShowGenre> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +42,7 @@ class TvShowFragment : Fragment() {
         tvViewModel.getAllTvShows().observe(this, Observer { tvShowResults ->
             run {
                 tvAdapter.apply {
-                    setListTvShow(tvShowResults, tvShowGenres)
+                    setListTvShow(tvShowResults)
                     notifyDataSetChanged()
                 }
 

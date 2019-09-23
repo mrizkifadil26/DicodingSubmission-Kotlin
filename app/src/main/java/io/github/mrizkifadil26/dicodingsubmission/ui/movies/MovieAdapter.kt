@@ -11,7 +11,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import io.github.mrizkifadil26.dicodingsubmission.R
-import io.github.mrizkifadil26.dicodingsubmission.data.movies.MovieGenre
 import io.github.mrizkifadil26.dicodingsubmission.data.movies.MovieResults
 import io.github.mrizkifadil26.dicodingsubmission.ui.detail.movies.MovieDetailActivity
 import io.github.mrizkifadil26.dicodingsubmission.util.Config
@@ -21,11 +20,9 @@ class MovieAdapter(private val context: Context) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     private lateinit var movies: List<MovieResults>
-    private lateinit var genres: List<MovieGenre>
 
-    fun setListMovie(movies: List<MovieResults>, genres: List<MovieGenre>) {
+    fun setListMovie(movies: List<MovieResults>) {
         this.movies = movies
-        this.genres = genres
         notifyDataSetChanged()
     }
 
