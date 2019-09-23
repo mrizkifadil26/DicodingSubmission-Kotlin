@@ -10,9 +10,6 @@ interface TvShowDao {
     @Delete
     suspend fun deleteFavoriteTv(tvShow: TvShow)
 
-    @Query("DELETE FROM tbl_tv")
-    suspend fun deleteAllFavoriteTv()
-
     @Query("SELECT * FROM tbl_tv")
     suspend fun getAllFavoriteTv(): List<TvShow>
 

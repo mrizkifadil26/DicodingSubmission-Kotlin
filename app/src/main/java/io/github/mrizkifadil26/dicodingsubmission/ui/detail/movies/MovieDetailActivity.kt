@@ -2,7 +2,6 @@ package io.github.mrizkifadil26.dicodingsubmission.ui.detail.movies
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -14,7 +13,6 @@ import io.github.mrizkifadil26.dicodingsubmission.data.movies.Movie
 import io.github.mrizkifadil26.dicodingsubmission.ui.MainActivity
 import io.github.mrizkifadil26.dicodingsubmission.util.Config
 import io.github.mrizkifadil26.dicodingsubmission.viewmodel.MovieViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity() {

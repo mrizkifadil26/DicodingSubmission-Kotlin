@@ -4,7 +4,6 @@ import android.app.Application
 import io.github.mrizkifadil26.dicodingsubmission.data.CatalogueRoomDatabase
 import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShow
 import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShowDao
-import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShowGenre
 import io.github.mrizkifadil26.dicodingsubmission.data.tvshows.TvShowResults
 import io.github.mrizkifadil26.dicodingsubmission.network.ApiService
 import io.github.mrizkifadil26.dicodingsubmission.network.RetrofitBuilder
@@ -31,16 +30,6 @@ class TvShowRepository(application: Application) : BaseRepository() {
         return tvShowResponse?.results
     }
 
-    suspend fun getTvShowGenreFromRetrofit(): List<TvShowGenre>? {
-
-        val tvShowGenreResponse = safeApiCall(
-            call = {apiService.getTvShowGenreFromApi()},
-            errorMessage = "Error Fetching TvShowGenre"
-        )
-
-        return tvShowGenreResponse?.genres
-    }
-
     suspend fun getTvShowDetailFromRetrofit(id: Int): TvShow? = safeApiCall(
         call = { apiService.getTvShowDetailFromApi(id) },
         errorMessage = "Error Fetching TvShow"
@@ -61,10 +50,6 @@ class TvShowRepository(application: Application) : BaseRepository() {
 
     suspend fun deleteFavoriteTvShow(tvShow: TvShow) {
         return tvShowDao.deleteFavoriteTv(tvShow)
-    }
-
-    suspend fun deleteAllFavoriteTvShow() {
-        return tvShowDao.deleteAllFavoriteTv()
     }
 
 }

@@ -16,4 +16,5 @@
     <string name="tv_backdrop">Tv Shows Backdrop</string>
     <string name="episodes">Episodes</string>
     <string name="seasons">Seasons</string>
+    <string name="language">Language</string>
 </resources>

@@ -4,7 +4,6 @@ import android.app.Application
 import io.github.mrizkifadil26.dicodingsubmission.data.CatalogueRoomDatabase
 import io.github.mrizkifadil26.dicodingsubmission.data.movies.Movie
 import io.github.mrizkifadil26.dicodingsubmission.data.movies.MovieDao
-import io.github.mrizkifadil26.dicodingsubmission.data.movies.MovieGenre
 import io.github.mrizkifadil26.dicodingsubmission.data.movies.MovieResults
 import io.github.mrizkifadil26.dicodingsubmission.network.ApiService
 import io.github.mrizkifadil26.dicodingsubmission.network.RetrofitBuilder
@@ -31,16 +30,6 @@ class MovieRepository(application: Application) : BaseRepository() {
         return movieResponse?.results
     }
 
-    suspend fun getMovieGenreFromRetrofit(): List<MovieGenre>? {
-
-        val movieGenreResponse = safeApiCall(
-            call = {apiService.getMovieGenreFromApi()},
-            errorMessage = "Error Fetching MovieGenre"
-        )
-
-        return movieGenreResponse?.genres
-    }
-
     suspend fun getMovieDetailFromRetrofit(id: Int): Movie? = safeApiCall(
         call = {apiService.getMovieDetailFromApi(id)},
         errorMessage = "Error Fetching Movie"
@@ -61,9 +50,5 @@ class MovieRepository(application: Application) : BaseRepository() {
 
     suspend fun deleteFavoriteMovie(movie: Movie) {
         return movieDao.deleteFavoriteMovie(movie)
-    }
-
-    suspend fun deleteAllFavoriteMovie() {
-        return movieDao.deleteAllFavoriteMovie()
     }
 }

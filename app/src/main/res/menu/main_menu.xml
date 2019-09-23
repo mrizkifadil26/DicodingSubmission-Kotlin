@@ -5,6 +5,6 @@
     <item
         android:id="@+id/menu_language"
         android:icon="@drawable/ic_settings"
-        android:title="Language"
+        android:title="@string/language"
         app:showAsAction="always" />
 </menu>
